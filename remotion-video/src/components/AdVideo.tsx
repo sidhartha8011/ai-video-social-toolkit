@@ -23,6 +23,8 @@ const AdClipSchema = z.object({
   src: z.string(),
   durationMs: z.number(),
   volume: z.number().default(0.3),
+  // Bottom-anchored zoom: > 1 crops the top of the clip (hide bad AI signage etc.)
+  scale: z.number().default(1),
 });
 
 const AdAudioSchema = z.object({
@@ -229,7 +231,13 @@ export const AdVideo: React.FC<z.infer<typeof adVideoSchema>> = ({
           <Video
             src={asset(project, clip.src)}
             volume={clip.volume}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transform: `scale(${clip.scale})`,
+              transformOrigin: "50% 100%",
+            }}
           />
         </AbsoluteFill>
       </Sequence>

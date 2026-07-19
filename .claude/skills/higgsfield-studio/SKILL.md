@@ -45,9 +45,9 @@ batch is planned.
 | One-off character/avatar from text | `soul_cast` | |
 | 4K, text-in-image, diagrams, **infographics** | `nano_banana_pro` | The graphics workhorse |
 | Product/ad video | `marketing_studio_video` | URL flow below |
-| Fast text-to-video / animate one image | `kling3_0_turbo` | ~5–10s clips |
+| Video DEFAULT: native audio + identity + 4K | `seedance_2_0` | 4–15s (request 15); generate_audio default true |
 | Multi-shot, audio, motion transfer | `kling3_0` | |
-| Identity-consistent video | `seedance_2_0` | Audio refs via medias role `audio` |
+| Budget/silent fast clips | `kling3_0_turbo` | 3–15s; NO audio param — add VO separately |
 | YouTube URL → short clips | `clipify` / `personal_clipper_create` | |
 | Video virality score | `virality_predictor` | See loop below |
 

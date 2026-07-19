@@ -24,8 +24,8 @@ description: |
 
 **Reel / video item:**
 1. video-script → timed shot table. **Default engine: REAL generated video clips**
-   (Higgsfield `kling3_0_turbo`; `seedance_2_0` when a recurring character/identity
-   matters) — never photo-slides unless the user explicitly asks for the budget
+   (Higgsfield `seedance_2_0` — 15s max clips, native audio ON, identity refs;
+   `kling3_0_turbo` only for budget/silent runs) — never photo-slides unless the user explicitly asks for the budget
    slide route (Remotion stills + Ken Burns). Use the item's pre-selected hook
    (hook-factory reserve if it needs alternatives).
 2. Generate per higgsfield-studio plumbing: images (`soul_2`/`nano_banana_pro`, 9:16) or
