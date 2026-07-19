@@ -21,6 +21,7 @@ Higgsfield MCP (primary generation engine), and the Suno API.
 | `.claude/skills/humanize-copy/` | Final polish pass that strips AI-writing tells (vocabulary, rule-of-three, negative parallelism, filler) and adds brand-matched voice. Adapted from blader/humanizer (MIT). |
 | `.claude/skills/hook-factory/` | Hook engineering: 12 named mechanisms with psychology, per-format anatomy, 10-hook scored batches, validation via virality_predictor + Ad Library, retention-rescue diagnosis. |
 | `.claude/skills/campaign-launch/` | Full-funnel orchestrator: one brief → message spine → coordinated organic + video + paid + landing + email kit with launch timeline and measurement plan. |
+| `.claude/skills/social-reporting/` | Client-ready weekly/monthly reports: narrative-first, real IG data pulled via the Meta MCP, period-over-period scorecard, next-period plan that feeds the calendar. |
 | `social-pages/_template/` | Knowledge-bank templates: `page.md` (brand profile), `calendar.md`, `performance.md`. |
 
 ## Setup

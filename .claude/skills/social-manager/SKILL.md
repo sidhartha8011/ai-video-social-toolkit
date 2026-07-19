@@ -72,6 +72,30 @@ the page mentioned, offer to onboard it first.
 Read all pages' `calendar.md` → report drafted/approved/scheduled counts, gaps vs
 cadence, and the next 3 actions.
 
+### 6. Metrics pull (semi-automated logging)
+When the page's IG is linked to the connected Meta account: `ads_get_ig_accounts` →
+`ads_get_ig_media` → fill the `performance.md` post log from real data instead of asking
+the user to type numbers. Then distill Learnings as usual. (Full-period analysis and
+client deliverables → the **social-reporting** skill.)
+
+### 7. Approvals & handoff (client pages)
+- **ClickUp** (connected): create a task per draft batch — description carries hooks +
+  copy + asset links, assignee = approver from page.md; status mirrors calendar
+  (drafted → approved). Poll/update on request.
+- **Gmail** (connected): draft the approval email with the content package (draft only —
+  the user sends). Approved items flip to `approved` in calendar.md.
+
+### 8. Posting ops ("schedule it")
+No organic publishing API exists in this stack — be honest about that. The workflow:
+1. Package each approved post (final copy + asset paths + platform + exact time from
+   page.md posting windows).
+2. **Calendar MCP**: create a 15-min event at the posting time — title `POST: <page> —
+   <hook>`, description = paste-ready copy + asset location.
+3. Include the **first-hour engagement block** in the event: reply to every comment/DM
+   fast (it's a ranking signal on both IG and FB).
+4. Community management: draft replies in page voice on request; escalate anything
+   sensitive (complaints, refunds, trolls) to the user rather than answering.
+
 ## Multi-page hygiene
 
 - Every page keeps its own voice — never let brands bleed into each other.
@@ -82,7 +106,10 @@ cadence, and the next 3 actions.
 
 ## What this skill does NOT do
 
-- It does not publish. Organic posting is manual (Meta Ads MCP is for paid campaigns).
+- It does not publish. Organic posting is manual (Meta Ads MCP is for paid campaigns);
+  posting ops = package + calendar reminder + engagement block (op 8).
 - It does not invent metrics — performance rows only from user-provided or tool-fetched data.
 - It does not override platform-content's algorithm guidance — brand voice adapts THE HOW,
   the algorithm decides THE FORMAT.
+- Companion skills: social-reporting (client reports), hook-factory (hooks),
+  humanize-copy (final pass), campaign-launch (launches), meta-ads-pro (paid).
