@@ -41,8 +41,7 @@ remotion-video/node_modules/
 remotion-video/dist/
 remotion-video/out/
 remotion-video/.env
-remotion-video/public/review/
-remotion-video/public/review-test/
+remotion-video/public/review*/
 # generated/client compositions stay LOCAL — only the template demo is tracked
 remotion-video/public/content/*
 !remotion-video/public/content/history-of-venus/
