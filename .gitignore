@@ -16,6 +16,8 @@
 !/.claude/skills/remotion-video-review/
 !/.claude/skills/platform-content/
 !/.claude/skills/social-manager/
+!/.claude/skills/video-script/
+!/.claude/skills/content-research/
 
 # --- tracked: social knowledge-bank templates (never real client pages) ---
 !/social-pages/

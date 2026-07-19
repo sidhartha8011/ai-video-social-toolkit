@@ -14,6 +14,8 @@ Magnific MCP, and the Suno API.
 | `.claude/skills/remotion-video-review/` | Key-free video QA: samples frames with `remotion still`, Claude vision critiques them (a TwelveLabs-free review loop). |
 | `.claude/skills/platform-content/` | Algorithm-first content for Instagram / Facebook / websites, with a dated ranking-signal snapshot and a self-refresh rule. |
 | `.claude/skills/social-manager/` | Multi-page social management: per-page knowledge bank (voice, pillars, learnings), calendar, performance feedback loop. Routes creation through platform-content. |
+| `.claude/skills/video-script/` | Engine-aware, duration-aware video scripts: timed shot tables with paste-ready prompts per engine (Remotion slides, Magnific clips, Veo/Kling-class, Higgsfield), narration timed at ~2.3 words/sec, clip-count math. |
+| `.claude/skills/content-research/` | Live web research for new things to post: multi-angle sweep (news, trends, competitors, questions, seasonal), 4-axis scoring, ranked ideas wired into the calendar backlog. |
 | `social-pages/_template/` | Knowledge-bank templates: `page.md` (brand profile), `calendar.md`, `performance.md`. |
 
 ## Setup
