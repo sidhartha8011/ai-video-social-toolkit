@@ -2,10 +2,10 @@
 name: produce
 description: |
   One small call that produces a planned content item for the ACTIVE brand, end to end:
-  script → asset generation (Higgsfield images/video, Suno music, Remotion assembly) →
-  humanize pass → virality check → ready-to-post package saved to the brand folder and
-  marked drafted on the calendar. Wraps video-script, platform-content, higgsfield-studio,
-  make-video, suno-music, humanize-copy, and the virality_predictor loop.
+  script → asset generation (Higgsfield images/video with native audio, Remotion
+  assembly) → humanize pass → virality check → ready-to-post package saved to the brand
+  folder and marked drafted on the calendar. Wraps video-script, platform-content,
+  higgsfield-studio, make-video, humanize-copy, and the virality_predictor loop.
 
   Triggers:
   - "/produce", "/produce next", "/produce monday", "/produce <topic>", "make the next post"
@@ -27,8 +27,10 @@ description: |
    narration-led; Higgsfield `kling3_0_turbo` clips for motion-led), using the item's
    pre-selected hook (hook-factory reserve if it needs alternatives).
 2. Generate per higgsfield-studio plumbing: images (`soul_2`/`nano_banana_pro`, 9:16) or
-   clips (`get_cost` preflight); VO (ElevenLabs if keyed, else Higgsfield audio);
-   music bed → suno-music; assemble → make-video / `build-timeline.ts` when Remotion route.
+   clips (`get_cost` preflight) — prefer models with NATIVE audio (`kling3_0`/Veo-class,
+   pass `generate_audio` when declared); VO (ElevenLabs if keyed, else Higgsfield
+   `generate_audio`); slide-route beds via Higgsfield `generate_audio`;
+   assemble → make-video / `build-timeline.ts` when Remotion route.
 3. QA: remotion-video-review (frames) → **virality_predictor** → fix weakest axis →
    re-check (cap 2 loops). Attach the final score to the draft.
 

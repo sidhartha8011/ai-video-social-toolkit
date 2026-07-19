@@ -92,7 +92,11 @@ training vs one-off explicitly — never train silently.
 scene prompt breakdown → feed into video-script for our own version. Adapt, never copy.
 
 **Voice/audio**: `list_voices` → `generate_audio` (TTS), `create_voice` (clone),
-`voice_change`, `dubbing` (localize a finished video). Music stays **suno-music**.
+`voice_change`, `dubbing` (localize a finished video). **Music/soundtrack: prefer NATIVE
+audio from the video engine** — `kling3_0` and Veo-class generate audio with the video
+(pass `generate_audio`/`sound` only when the model declares it; check `models_explore`);
+for slide-based videos needing a bed, use `generate_audio`. (suno-music exists but is
+out of the default chain for now.)
 
 **Sites/funnels**: `create_website` → `deploy_website` → `publish_website` for landing
 pages tied to campaigns (get user confirmation before publishing anything public).

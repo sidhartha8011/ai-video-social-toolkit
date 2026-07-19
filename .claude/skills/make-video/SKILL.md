@@ -2,11 +2,10 @@
 name: make-video
 description: |
   One-shot video production pipeline from a single brief. Generates the content (script +
-  per-scene images, voiceover, music) with the connected engines (Higgsfield MCP for
-  visuals/voice, suno-music skill for the music bed), assembles it into the
-  `remotion-video` project as a new timeline composition with one command, opens it in
-  Remotion Studio for editing, QA's it with the remotion-video-review skill, and renders
-  the final MP4.
+  per-scene images, voiceover, music) with the Higgsfield MCP — visuals, voice, and
+  native audio from the video engines — assembles it into the `remotion-video` project
+  as a new timeline composition with one command, opens it in Remotion Studio for
+  editing, QA's it with the remotion-video-review skill, and renders the final MP4.
 
   Key-free: works with the already-connected engines — no remotion-superpowers plugin
   keys or /setup required.
@@ -37,7 +36,7 @@ State what you picked; the user can override.
 | Scene images | **Higgsfield** `generate_image` (`soul_2` people/UGC · `nano_banana_pro` graphics/4K) | `aspect_ratio: "9:16"`; append `vertical composition, cinematic lighting, high detail, no text, no watermark` |
 | Video clips (if brief asks) | **Higgsfield** `generate_video` (`kling3_0_turbo` fast · `seedance_2_0` identity) | `get_cost:true` preflight; pricier/slower than slides |
 | Voiceover | **ElevenLabs MCP** `text_to_speech` if keyed (word timestamps!) → else **Higgsfield** `generate_audio` + `list_voices` | Check with a cheap call first; 401 = no key |
-| Music bed | **suno-music skill** | Verified flow, key auto-loads from `remotion-video/.env` |
+| Music/soundtrack | **Native from the video engine** — `kling3_0`/Veo-class generate audio with the clip (pass `generate_audio` when the model declares it); slide-route beds via Higgsfield `generate_audio` | suno-music exists but is out of the default chain for now |
 | Stock b-roll | **Magnific** `stock_search`/`stock_download` (if connected) | Higgsfield has no stock search |
 | QA / review | **remotion-video-review skill** + **virality_predictor** (higgsfield-studio) | Frame review, then virality score before posting |
 

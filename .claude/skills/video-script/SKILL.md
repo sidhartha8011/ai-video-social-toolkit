@@ -59,7 +59,9 @@ visual/value claim. On FB engineer the 50%-retention midpoint beat too.>
 | 1 | 0:00–0:06 | ... | ... | ... | ... |
 
 CTA (final scene): <send/save/comment/link per goal>
-MUSIC BRIEF: <one line for suno-music — genre, mood, BPM>
+AUDIO BRIEF: <native-audio direction per scene for kling3_0/Veo-class — ambience, SFX,
+music mood — written INTO the clip prompts; separate bed via Higgsfield generate_audio
+only for slide-route videos>
 COVER/THUMB: <one still prompt>
 ```
 
@@ -72,8 +74,9 @@ no engine-impossible asks (no 30s single clips, no text rendering inside AI vide
 
 - Remotion route → this script's scenes map 1:1 to `descriptor.json` scenes (make-video).
 - Clip route → generate each prompt (Higgsfield `generate_video`, per higgsfield-studio
-  plumbing), then Remotion `<Video>` sequences to stitch; suno-music for the bed; run the
-  finished cut through `virality_predictor` before posting.
+  plumbing) with NATIVE audio where the model supports it (`kling3_0`/Veo-class), then
+  Remotion `<Video>` sequences to stitch; run the finished cut through
+  `virality_predictor` before posting.
 - Multiple durations requested (e.g. 15s + 30s + 60s cuts) → write the LONGEST first,
   then cut scenes (don't compress narration speed).
 

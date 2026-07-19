@@ -39,14 +39,14 @@ Secrets (never committed): create `remotion-video/.env`
 SUNO_KEY=<your sunoapi.org API key>
 ```
 
-Engines: **Higgsfield MCP** (primary — images/video/ads/virality), Suno API (music).
-Optional: Magnific MCP (stock search fallback), ElevenLabs (word-timestamp TTS),
+Engines: **Higgsfield MCP** (primary — images/video/ads/virality, with NATIVE audio
+from the video models). Optional: Suno API (music, out of the default chain),
+Magnific MCP (stock search fallback), ElevenLabs (word-timestamp TTS),
 Higgsfield CLI (`npm i -g @higgsfield/cli`).
 
 ## Typical flows
 
 - `"make a video about <topic>"` → make-video runs the full pipeline
-- `"generate background music, cinematic"` → suno-music
 - `"review the render"` → remotion-video-review
 - `"create an instagram carousel about <topic>"` → platform-content
 - `"onboard <brand> socials"` / `"plan the week"` → social-manager
