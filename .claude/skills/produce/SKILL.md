@@ -28,8 +28,9 @@ description: |
    pre-selected hook (hook-factory reserve if it needs alternatives).
 2. Generate per higgsfield-studio plumbing: images (`soul_2`/`nano_banana_pro`, 9:16) or
    clips (`get_cost` preflight) — prefer models with NATIVE audio (`kling3_0`/Veo-class,
-   pass `generate_audio` when declared); VO (ElevenLabs if keyed, else Higgsfield
-   `generate_audio`); slide-route beds via Higgsfield `generate_audio`;
+   pass `generate_audio` when declared); VO (Higgsfield `text2speech_v2`,
+   variant elevenlabs, voice via `list_voices`); slide-route beds: native-audio clips
+   or user-supplied track;
    assemble → make-video / `build-timeline.ts` when Remotion route.
 3. QA: remotion-video-review (frames) → **virality_predictor** → fix weakest axis →
    re-check (cap 2 loops). Attach the final score to the draft.

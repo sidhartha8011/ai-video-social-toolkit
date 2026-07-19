@@ -91,12 +91,15 @@ training vs one-off explicitly — never train silently.
 **Analyze a reference video** ("make one like this"): `video_analysis_create` → scene-by-
 scene prompt breakdown → feed into video-script for our own version. Adapt, never copy.
 
-**Voice/audio**: `list_voices` → `generate_audio` (TTS), `create_voice` (clone),
-`voice_change`, `dubbing` (localize a finished video). **Music/soundtrack: prefer NATIVE
-audio from the video engine** — `kling3_0` and Veo-class generate audio with the video
-(pass `generate_audio`/`sound` only when the model declares it; check `models_explore`);
-for slide-based videos needing a bed, use `generate_audio`. (suno-music exists but is
-out of the default chain for now.)
+**Voice/audio** (verified catalog): VO/TTS → `generate_audio` with model
+**`text2speech_v2`** (variant: elevenlabs | minimax | seed_speech | vibe_voice |
+cozy_voice; voice via `list_voices`, voice_type+voice_id required) or **`seed_audio`**
+(ByteDance, voice/audio-reference control). `create_voice` (clone), `voice_change`,
+`dubbing` (localize a finished video). **Music/soundtrack: NATIVE audio from the video
+engine** — `kling3_0`/Veo-class generate audio with the video (pass `generate_audio`/
+`sound` only when the model declares it). `sonilo_music`/`mirelo` (music/SFX) are
+game-pipeline-only — don't offer them for general video. (suno-music exists but is out
+of the default chain for now.)
 
 **Sites/funnels**: `create_website` → `deploy_website` → `publish_website` for landing
 pages tied to campaigns (get user confirmation before publishing anything public).
