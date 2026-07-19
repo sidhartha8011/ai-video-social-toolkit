@@ -22,6 +22,7 @@ Higgsfield MCP (primary generation engine), and the Suno API.
 | `.claude/skills/hook-factory/` | Hook engineering: 12 named mechanisms with psychology, per-format anatomy, 10-hook scored batches, validation via virality_predictor + Ad Library, retention-rescue diagnosis. |
 | `.claude/skills/campaign-launch/` | Full-funnel orchestrator: one brief → message spine → coordinated organic + video + paid + landing + email kit with launch timeline and measurement plan. |
 | `.claude/skills/social-reporting/` | Client-ready weekly/monthly reports: narrative-first, real IG data pulled via the Meta MCP, period-over-period scorecard, next-period plan that feeds the calendar. |
+| `.claude/skills/brand/`, `plan/`, `produce/` | The brand-session shortcuts: `/brand <name>` scopes everything to one brand (persistent active-brand state); `/plan` = live research → scored ideas → filled calendar; `/produce next` = script → generate (Higgsfield/Suno/Remotion) → humanize → virality-check → draft package. Thin wrappers over the heavy skills. |
 | `social-pages/_template/` | Knowledge-bank templates: `page.md` (brand profile), `calendar.md`, `performance.md`. |
 
 ## Setup
