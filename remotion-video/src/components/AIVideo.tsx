@@ -91,6 +91,14 @@ export const AIVideo: React.FC<z.infer<typeof aiVideoSchema>> = ({
         );
       })}
 
+      {/* Low-volume music bed — only for comps that ship a music.mp3 */}
+      {id === "ashoka-roofing-monsoon" && (
+        <Audio
+          src={staticFile(`content/${id}/audio/music.mp3`)}
+          volume={0.18}
+        />
+      )}
+
       {timeline.audio.map((element, index) => {
         const { startFrame, duration } = calculateFrameTiming(
           element.startMs,

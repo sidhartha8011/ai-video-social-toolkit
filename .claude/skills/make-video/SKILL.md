@@ -24,7 +24,9 @@ State what you picked; the user can override.
 ## Defaults (override only if the brief says so)
 
 - **Format:** vertical 9:16, 1080×1920 (matches the template; `Root.tsx` hardcodes this).
-- **Style:** AI image slides + Ken-Burns motion + blur transitions (fast, cheap).
+- **Style:** REAL generated video clips (Higgsfield `kling3_0_turbo`/`seedance_2_0`,
+  native audio) stitched in Remotion — the default. Image slides + Ken-Burns is the
+  BUDGET route, used only when the user explicitly asks for it.
 - **Audio:** voiceover + word-synced captions + low-volume music bed.
 - **Length:** 6–8 scenes (~40–70s of narration).
 - **Target:** `remotion-video/`, assets under `public/content/<slug>/` (kebab-case slug).

@@ -26,8 +26,9 @@ From the ask (infer aggressively, state your picks):
 1. **Platform target** → duration + hook rules (defaults from platform-content skill):
    IG/FB Reel **15–30s** (completion-optimized) · TikTok 15–34s · YT Short ≤60s ·
    explainer 45–90s · website hero loop 8–15s (no narration).
-2. **Engine** → clip physics (table below). If unstated: image-slides (cheapest) for
-   narration-led content, video clips for cinematic/motion-led content.
+2. **Engine** → clip physics (table below). If unstated: **generated video clips**
+   (Higgsfield `kling3_0_turbo`) — the default for everything. Image-slides are the
+   budget route, only when explicitly requested.
 3. **Goal** → reach (sends/completion), saves (utility), conversion (CTA) — from
    platform-content's format-by-goal logic.
 

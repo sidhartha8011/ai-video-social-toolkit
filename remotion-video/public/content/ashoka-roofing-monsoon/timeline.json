@@ -1,0 +1,573 @@
+{
+  "elements": [
+    {
+      "startMs": 0,
+      "endMs": 3200,
+      "imageUrl": "0a13ff2f-1688-4caa-aff8-86b1140f7325",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 3200
+        }
+      ]
+    },
+    {
+      "startMs": 3200,
+      "endMs": 7120,
+      "imageUrl": "f1a594c5-0344-481f-b610-3a3cccc4b421",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 3920
+        }
+      ]
+    },
+    {
+      "startMs": 7120,
+      "endMs": 10080,
+      "imageUrl": "186a4593-109a-4a95-867f-5f2085ff8e47",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 2960
+        }
+      ]
+    },
+    {
+      "startMs": 10080,
+      "endMs": 14160,
+      "imageUrl": "cfd5e0c7-2031-4d21-bf2c-ba6c5d38902f",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 4080
+        }
+      ]
+    },
+    {
+      "startMs": 14160,
+      "endMs": 18880,
+      "imageUrl": "7419fbed-1068-428a-aa17-725e700d5824",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1.5,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 4720
+        }
+      ]
+    },
+    {
+      "startMs": 18880,
+      "endMs": 22080,
+      "imageUrl": "c1551f69-d04d-4d94-95b6-b1e994c09fb9",
+      "enterTransition": "blur",
+      "exitTransition": "blur",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.5,
+          "startMs": 0,
+          "endMs": 3200
+        }
+      ]
+    }
+  ],
+  "text": [
+    {
+      "startMs": 0,
+      "endMs": 1333.3,
+      "text": "हर मॉनसून, यही",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 1333.3,
+      "endMs": 2577.7999999999997,
+      "text": "कहानी। छत टपक",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 2577.7999999999997,
+      "endMs": 3200,
+      "text": "रही है।",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6446510539688696,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 3200,
+      "endMs": 3984,
+      "text": "इस बार कुछ",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5963694748448638,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 3984,
+      "endMs": 4839.3,
+      "text": "अलग। Ashoka",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 4839.3,
+      "endMs": 5552,
+      "text": "Steels का",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 5552,
+      "endMs": 6549.8,
+      "text": "colour coated",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 6549.8,
+      "endMs": 7120,
+      "text": "roofing।",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 7120,
+      "endMs": 7927.3,
+      "text": "ज़ंग-प्रूफ़",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6325599522880497,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 7927.3,
+      "endMs": 8801.8,
+      "text": "colour coat।",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6906728283436127,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 8801.8,
+      "endMs": 9609.1,
+      "text": "हर मौसम में",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5333534809704866,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 9609.1,
+      "endMs": 10080,
+      "text": "मज़बूत।",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6518242079080181,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 10080,
+      "endMs": 11135.2,
+      "text": "Tata और Jindal",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5356167561174419,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 11135.2,
+      "endMs": 12120,
+      "text": "का authorized",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 12120,
+      "endMs": 13034.5,
+      "text": "dealer। असली",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6227552980320364,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 13034.5,
+      "endMs": 13737.9,
+      "text": "माल, पूरा",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6793851616360465,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 13737.9,
+      "endMs": 14160,
+      "text": "भरोसा।",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5995060726568384,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 14160,
+      "endMs": 15125.5,
+      "text": "1982 से,",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5799081732332447,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 15125.5,
+      "endMs": 16520,
+      "text": "तिनसुकिया का",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.538931601084789,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 16520,
+      "endMs": 18129.1,
+      "text": "भरोसा — Ashoka",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 18129.1,
+      "endMs": 18880,
+      "text": "Steels।",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 18880,
+      "endMs": 19946.7,
+      "text": "आज ही रेट लें",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.6406217824220144,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    },
+    {
+      "startMs": 19946.7,
+      "endMs": 20784.8,
+      "text": "— WhatsApp",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.5826811978645478,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 20784.8,
+      "endMs": 21241.9,
+      "text": "करें।",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 1,
+          "to": 1,
+          "startMs": 0,
+          "endMs": 300
+        }
+      ]
+    },
+    {
+      "startMs": 21241.9,
+      "endMs": 22080,
+      "text": "7896890880।",
+      "position": "center",
+      "animations": [
+        {
+          "type": "scale",
+          "from": 0.61645992251502,
+          "to": 1.25,
+          "startMs": 0,
+          "endMs": 300
+        },
+        {
+          "type": "scale",
+          "from": 1.25,
+          "to": 1,
+          "startMs": 300,
+          "endMs": 500
+        }
+      ]
+    }
+  ],
+  "audio": [
+    {
+      "startMs": 0,
+      "endMs": 3200,
+      "audioUrl": "0a13ff2f-1688-4caa-aff8-86b1140f7325"
+    },
+    {
+      "startMs": 3200,
+      "endMs": 7120,
+      "audioUrl": "f1a594c5-0344-481f-b610-3a3cccc4b421"
+    },
+    {
+      "startMs": 7120,
+      "endMs": 10080,
+      "audioUrl": "186a4593-109a-4a95-867f-5f2085ff8e47"
+    },
+    {
+      "startMs": 10080,
+      "endMs": 14160,
+      "audioUrl": "cfd5e0c7-2031-4d21-bf2c-ba6c5d38902f"
+    },
+    {
+      "startMs": 14160,
+      "endMs": 18880,
+      "audioUrl": "7419fbed-1068-428a-aa17-725e700d5824"
+    },
+    {
+      "startMs": 18880,
+      "endMs": 22080,
+      "audioUrl": "c1551f69-d04d-4d94-95b6-b1e994c09fb9"
+    }
+  ],
+  "shortTitle": "MONSOON-PROOF ROOF"
+}

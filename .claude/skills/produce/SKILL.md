@@ -23,9 +23,11 @@ description: |
 ## Route by format (from the calendar line)
 
 **Reel / video item:**
-1. video-script → timed shot table for the chosen engine (default: Remotion slides for
-   narration-led; Higgsfield `kling3_0_turbo` clips for motion-led), using the item's
-   pre-selected hook (hook-factory reserve if it needs alternatives).
+1. video-script → timed shot table. **Default engine: REAL generated video clips**
+   (Higgsfield `kling3_0_turbo`; `seedance_2_0` when a recurring character/identity
+   matters) — never photo-slides unless the user explicitly asks for the budget
+   slide route (Remotion stills + Ken Burns). Use the item's pre-selected hook
+   (hook-factory reserve if it needs alternatives).
 2. Generate per higgsfield-studio plumbing: images (`soul_2`/`nano_banana_pro`, 9:16) or
    clips (`get_cost` preflight) — prefer models with NATIVE audio (`kling3_0`/Veo-class,
    pass `generate_audio` when declared); VO (Higgsfield `text2speech_v2`,
