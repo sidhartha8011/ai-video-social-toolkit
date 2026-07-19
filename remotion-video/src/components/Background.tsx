@@ -17,12 +17,6 @@ export const Background: React.FC<{
 }> = ({ item, project }) => {
   const frame = useCurrentFrame();
   const localMs = (frame / FPS) * 1000;
-  const { width, height } = useVideoConfig();
-
-  const imageRatio = IMAGE_HEIGHT / IMAGE_WIDTH;
-
-  const imgWidth = height;
-  const imgHeight = imgWidth * imageRatio;
   let animScale = 1 + EXTRA_SCALE;
 
   const currentScaleAnim = item.animations?.find(
@@ -41,8 +35,6 @@ export const Background: React.FC<{
   }
 
   const imgScale = animScale;
-  const top = -(imgHeight * imgScale - height) / 2;
-  const left = -(imgWidth * imgScale - width) / 2;
 
   const blur = calculateBlur({ item, localMs });
   const maxBlur = 25;
@@ -50,15 +42,19 @@ export const Background: React.FC<{
   const currentBlur = maxBlur * blur;
 
   return (
-    <AbsoluteFill>
+    <AbsoluteFill style={{ overflow: "hidden" }}>
       <Img
         src={staticFile(getImagePath(project, item.imageUrl))}
         style={{
-          width: imgWidth * imgScale,
-          height: imgHeight * imgScale,
+          width: "100%",
+          height: "100%",
+          maxWidth: "none",
           position: "absolute",
-          top,
-          left,
+          top: 0,
+          left: 0,
+          objectFit: "cover",
+          transform: `scale(${imgScale})`,
+          transformOrigin: "center center",
           filter: `blur(${currentBlur}px)`,
           WebkitFilter: `blur(${currentBlur}px)`,
         }}
