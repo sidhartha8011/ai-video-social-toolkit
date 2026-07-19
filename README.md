@@ -17,6 +17,10 @@ Higgsfield MCP (primary generation engine), and the Suno API.
 | `.claude/skills/video-script/` | Engine-aware, duration-aware video scripts: timed shot tables with paste-ready prompts per engine (Remotion slides, Magnific clips, Veo/Kling-class, Higgsfield), narration timed at ~2.3 words/sec, clip-count math. |
 | `.claude/skills/content-research/` | Live web research for new things to post: multi-angle sweep (news, trends, competitors, questions, seasonal), 4-axis scoring, ranked ideas wired into the calendar backlog. |
 | `.claude/skills/higgsfield-studio/` | The full digital-marketing suite on the Higgsfield MCP: images (Soul 2, Nano Banana Pro), video (Kling 3.0, Seedance 2.0, Veo-class), Marketing Studio DTC ads + brand kits, Shorts Studio, Personal Clipper, explainers, voice/dubbing, and the Virality Predictor loop. |
+| `.claude/skills/meta-ads-pro/` | Meta ads on the connected MCP: read-only audits (pixel/CAPI health, benchmarks, opportunity score), Ad Library competitor research, paused-first campaign builds with 2026 defaults, scale/kill rules, persisted per-account business context. |
+| `.claude/skills/humanize-copy/` | Final polish pass that strips AI-writing tells (vocabulary, rule-of-three, negative parallelism, filler) and adds brand-matched voice. Adapted from blader/humanizer (MIT). |
+| `.claude/skills/hook-factory/` | Hook engineering: 12 named mechanisms with psychology, per-format anatomy, 10-hook scored batches, validation via virality_predictor + Ad Library, retention-rescue diagnosis. |
+| `.claude/skills/campaign-launch/` | Full-funnel orchestrator: one brief → message spine → coordinated organic + video + paid + landing + email kit with launch timeline and measurement plan. |
 | `social-pages/_template/` | Knowledge-bank templates: `page.md` (brand profile), `calendar.md`, `performance.md`. |
 
 ## Setup
