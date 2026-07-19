@@ -23,9 +23,10 @@ description: |
 ## Route by format (from the calendar line)
 
 **Reel / video item:**
-1. video-script → timed shot table. **Default engine: REAL generated video clips**
-   (Higgsfield `seedance_2_0` — 15s max clips, native audio ON, identity refs;
-   `kling3_0_turbo` only for budget/silent runs) — never photo-slides unless the user explicitly asks for the budget
+1. video-script → timed shot table. **Default engine: REAL generated video clips** —
+   `seedance_2_0_mini` (>10s clips, identity/product refs, native audio) or
+   `gemini_omni` (ref-driven realism, v2v, ≤10s, native audio), chosen by fit;
+   "budget" keyword → `kling3_0_turbo`+VO — never photo-slides unless the user explicitly asks for the budget
    slide route (Remotion stills + Ken Burns). Use the item's pre-selected hook
    (hook-factory reserve if it needs alternatives).
 2. Generate per higgsfield-studio plumbing: images (`soul_2`/`nano_banana_pro`, 9:16) or

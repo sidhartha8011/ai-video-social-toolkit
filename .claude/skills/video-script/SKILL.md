@@ -26,9 +26,11 @@ From the ask (infer aggressively, state your picks):
 1. **Platform target** → duration + hook rules (defaults from platform-content skill):
    IG/FB Reel **15–30s** (completion-optimized) · TikTok 15–34s · YT Short ≤60s ·
    explainer 45–90s · website hero loop 8–15s (no narration).
-2. **Engine** → clip physics (table below). If unstated: **generated video clips**
-   (Higgsfield `kling3_0_turbo`) — the default for everything. Image-slides are the
-   budget route, only when explicitly requested.
+2. **Engine** → clip physics (table below). If unstated, pick between the TWO defaults
+   by fit: **`seedance_2_0_mini`** (clips >10s, product/identity consistency, audio
+   refs) or **`gemini_omni`** (reference-driven realism, v2v, ≤10s). User says
+   "budget" → `kling3_0_turbo` (+VO). Premium models only on explicit request.
+   Image-slides only when explicitly requested.
 3. **Goal** → reach (sends/completion), saves (utility), conversion (CTA) — from
    platform-content's format-by-goal logic.
 
@@ -37,8 +39,10 @@ From the ask (infer aggressively, state your picks):
 | Engine | Unit | Clip length | Prompt style | Gotchas |
 |---|---|---|---|---|
 | **Remotion slides** (make-video pipeline; stills via Higgsfield `generate_image`) | still image + Ken Burns | scene = narration length (4–8s) | Rich still-image prompt: subject, setting, mood, lighting, "vertical 9:16, no text" | Scene duration = voiceover duration; needs audioTimestamps; motion comes from Remotion, not the image |
-| **Higgsfield `seedance_2_0`** (DEFAULT — verified 2026-07-20) | video clip | **4–15s (request 15)** | Full 8-layer prompt anatomy (below) | NATIVE AUDIO default ON; up to 4K (mode=std); refs: start/end_image, image/video/audio_references (identity + multi-SKU); genre hints (epic/drama/…); 9:16 supported |
-| **Higgsfield `kling3_0_turbo`** (budget/silent) | video clip | **3–15s (request 15)** | 8-layer anatomy | ⚠️ NO native audio — pair with VO/text2speech_v2; 720/1080p; start_image only. `kling3_0` (full) for dialogue/motion-transfer |
+| **`seedance_2_0_mini`** (DEFAULT for length/identity — verified 2026-07-20) | video clip | **4–15s (request 15)** | Full 8-layer prompt anatomy (below) | NATIVE AUDIO default ON; refs: start/end_image, image/video/audio_references (identity + multi-SKU); genre hints; 480/720p; budget-fast |
+| **`gemini_omni`** (DEFAULT for refs/realism ≤10s) | video clip | **4–10s (request 10)** | 8-layer anatomy | NATIVE audio; image_references + video_references (t2v, i2v, **v2v**); 720p; 9:16 ✓ |
+| **`kling3_0_turbo`** — ONLY when user says "budget" | video clip | 3–15s | 8-layer anatomy | ⚠️ NO native audio — pair with text2speech_v2 VO; 720/1080p |
+| **Premium on request**: `seedance_2_0` (4K/identity), `veo3_1` (ultra-real, 4/6/8s), `kling3_0` (multi-shot/motion-transfer), `cinematic_studio_3_0` (cinema-grade, 4–15s) | video clip | per model | 8-layer anatomy | user asks for premium/4K/cinematic explicitly |
 | **Veo-class** (via Higgsfield catalog, `models_explore`) | video clip | 5–8s | One shot per prompt; physical realism, camera grammar ("slow dolly-in, 35mm, golden hour"); native audio on Veo 3.1 | Never script multi-shot sequences in one prompt; verify the model via `models_explore` before promising specs |
 | **Marketing Studio video** (product ads) | preset-driven ad | preset-set | No prose prompt needed — product URL + preset + hooks (UGC/Tutorial/Unboxing) | Script the HOOK LINE + beat order, not shots; pass `aspect_ratio:"9:16"` (defaults 16:9!) |
 | **Stock** (Magnific `stock_search`, if connected) | found clip | any (trim) | Search keywords, not prose | Script the trim: which 3–5s of the found clip |
