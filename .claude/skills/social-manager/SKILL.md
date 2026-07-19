@@ -49,7 +49,8 @@ the page mentioned, offer to onboard it first.
    algorithm side (including its freshness refresh); this skill owns the brand side.
 3. Apply page constraints LAST as a hard filter (banned claims, approval notes).
 4. Save drafts into `calendar.md` (status: drafted) with the hook + full copy, and tell
-   the user where it landed. Assets: route to Magnific / make-video / suno-music as needed.
+   the user where it landed. Assets: route to higgsfield-studio (images/video/ads/avatars)
+   / make-video / suno-music as needed; virality-check videos before they ship.
 
 ### 3. Plan a calendar ("plan the week/month")
 1. Read pillars + % mix from `page.md`, cadence from Platform notes, learnings from

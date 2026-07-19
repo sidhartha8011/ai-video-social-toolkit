@@ -3,15 +3,15 @@ name: video-script
 description: |
   Write production-ready video scripts engineered for a SPECIFIC generation engine and a
   SPECIFIC duration. Outputs a timed shot table (scene-by-scene) where every scene carries
-  the exact prompt formatted for the target engine (Remotion image-slides, Magnific
-  video clips, Veo/Kling-class text-to-video, Higgsfield) plus narration timed to
+  the exact prompt formatted for the target engine (Remotion image-slides, Higgsfield
+  Kling/Seedance/Veo-class clips, Marketing Studio ad presets) plus narration timed to
   words-per-second, hooks placed per current platform algorithms, and correct clip-length
   budgeting. The script IS the production plan — make-video or manual generation can
   execute it directly.
 
   Triggers:
   - "video script", "script for a reel/short/video", "shot list", "storyboard"
-  - "script this for veo/kling/magnific/remotion", "30 second script", "/video-script"
+  - "script this for kling/seedance/veo/remotion", "30 second script", "/video-script"
 ---
 
 # video-script — engine-aware, duration-aware video scripts
@@ -35,11 +35,12 @@ From the ask (infer aggressively, state your picks):
 
 | Engine | Unit | Clip length | Prompt style | Gotchas |
 |---|---|---|---|---|
-| **Remotion slides** (make-video pipeline) | still image + Ken Burns | scene = narration length (4–8s) | Rich still-image prompt: subject, setting, mood, lighting, "vertical 9:16, no text" | Scene duration = voiceover duration; needs audioTimestamps; motion comes from Remotion, not the image |
-| **Magnific video** (`video_generate`) | video clip | ~5–10s per clip | Cinematic shot prompt: subject + ACTION verb + camera move (dolly/pan/orbit) + lighting | Chain from a generated image (`identifier` as keyframe) for character/style consistency |
-| **Veo/Kling-class** (via Replicate/KIE, needs keys) | video clip | 5–8s (Veo), 5–10s (Kling) | One shot per prompt; physical realism, camera grammar ("slow dolly-in, 35mm, golden hour"); Veo 3.1 does native audio/dialogue | Never script multi-shot sequences in one prompt; dialogue only if engine supports audio |
-| **Higgsfield** (CLI, needs credits) | video clip / motion preset | ~5–10s | Shot prompt + named camera-motion preset | Check `higgsfield model list --video` for current models before promising specs |
-| **Stock** (Magnific `stock_search`) | found clip | any (trim) | Search keywords, not prose | Script the trim: which 3–5s of the found clip |
+| **Remotion slides** (make-video pipeline; stills via Higgsfield `generate_image`) | still image + Ken Burns | scene = narration length (4–8s) | Rich still-image prompt: subject, setting, mood, lighting, "vertical 9:16, no text" | Scene duration = voiceover duration; needs audioTimestamps; motion comes from Remotion, not the image |
+| **Higgsfield `kling3_0_turbo`** (default clips) | video clip | ~5–10s | Cinematic shot prompt: subject + ACTION verb + camera move (dolly/pan/orbit) + lighting | Fast text-to-video or animate one start-frame; chain a `generate_image` job_id as keyframe for consistency |
+| **Higgsfield `kling3_0` / `seedance_2_0`** | video clip | 5–10s | Same, plus dialogue/audio (kling3_0) or identity refs (seedance) | seedance for recurring characters; audio refs via medias role `audio`; `get_cost` preflight |
+| **Veo-class** (via Higgsfield catalog, `models_explore`) | video clip | 5–8s | One shot per prompt; physical realism, camera grammar ("slow dolly-in, 35mm, golden hour"); native audio on Veo 3.1 | Never script multi-shot sequences in one prompt; verify the model via `models_explore` before promising specs |
+| **Marketing Studio video** (product ads) | preset-driven ad | preset-set | No prose prompt needed — product URL + preset + hooks (UGC/Tutorial/Unboxing) | Script the HOOK LINE + beat order, not shots; pass `aspect_ratio:"9:16"` (defaults 16:9!) |
+| **Stock** (Magnific `stock_search`, if connected) | found clip | any (trim) | Search keywords, not prose | Script the trim: which 3–5s of the found clip |
 
 **Clip-count math (do this explicitly):** scenes = ceil(duration ÷ clip length).
 A 30s reel on a 6s engine = 5 clips. Narration = duration × **~2.3 words/sec** (140 wpm);
@@ -70,8 +71,9 @@ no engine-impossible asks (no 30s single clips, no text rendering inside AI vide
 ## Step 4 — Handoff
 
 - Remotion route → this script's scenes map 1:1 to `descriptor.json` scenes (make-video).
-- Clip route → generate each prompt (Magnific `video_generate` / engine of choice), then
-  Remotion `<Video>` sequences or `video_concatenate` to stitch; suno-music for the bed.
+- Clip route → generate each prompt (Higgsfield `generate_video`, per higgsfield-studio
+  plumbing), then Remotion `<Video>` sequences to stitch; suno-music for the bed; run the
+  finished cut through `virality_predictor` before posting.
 - Multiple durations requested (e.g. 15s + 30s + 60s cuts) → write the LONGEST first,
   then cut scenes (don't compress narration speed).
 

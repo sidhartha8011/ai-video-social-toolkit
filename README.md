@@ -2,7 +2,7 @@
 
 A working toolkit for producing short-form videos and algorithm-aware social content with
 [Claude Code](https://claude.com/claude-code), built around a Remotion project, the
-Magnific MCP, and the Suno API.
+Higgsfield MCP (primary generation engine), and the Suno API.
 
 ## What's inside
 
@@ -16,6 +16,7 @@ Magnific MCP, and the Suno API.
 | `.claude/skills/social-manager/` | Multi-page social management: per-page knowledge bank (voice, pillars, learnings), calendar, performance feedback loop. Routes creation through platform-content. |
 | `.claude/skills/video-script/` | Engine-aware, duration-aware video scripts: timed shot tables with paste-ready prompts per engine (Remotion slides, Magnific clips, Veo/Kling-class, Higgsfield), narration timed at ~2.3 words/sec, clip-count math. |
 | `.claude/skills/content-research/` | Live web research for new things to post: multi-angle sweep (news, trends, competitors, questions, seasonal), 4-axis scoring, ranked ideas wired into the calendar backlog. |
+| `.claude/skills/higgsfield-studio/` | The full digital-marketing suite on the Higgsfield MCP: images (Soul 2, Nano Banana Pro), video (Kling 3.0, Seedance 2.0, Veo-class), Marketing Studio DTC ads + brand kits, Shorts Studio, Personal Clipper, explainers, voice/dubbing, and the Virality Predictor loop. |
 | `social-pages/_template/` | Knowledge-bank templates: `page.md` (brand profile), `calendar.md`, `performance.md`. |
 
 ## Setup
@@ -32,8 +33,9 @@ Secrets (never committed): create `remotion-video/.env`
 SUNO_KEY=<your sunoapi.org API key>
 ```
 
-Optional engines: Magnific MCP (`claude mcp add --transport http magnific https://mcp.magnific.com`),
-ElevenLabs (word-timestamp TTS), Higgsfield CLI (`npm i -g @higgsfield/cli`).
+Engines: **Higgsfield MCP** (primary — images/video/ads/virality), Suno API (music).
+Optional: Magnific MCP (stock search fallback), ElevenLabs (word-timestamp TTS),
+Higgsfield CLI (`npm i -g @higgsfield/cli`).
 
 ## Typical flows
 

@@ -125,9 +125,12 @@ major choice ("carousel because saves-goal + highest engagement format").
 Multi-platform asks: adapt the core idea per platform — never copy-paste the same copy.
 
 ### 5. Assets (optional, this project's stack)
-Visuals → Magnific `images_generate` (check memory for brand tokens on brand work).
-Video → `make-video` skill / remotion-video. Music → `suno-music`. Publishing to
-Meta → the Meta Ads MCP is connected for paid; organic posting stays manual.
+Visuals → Higgsfield `generate_image` (`nano_banana_pro` for graphics/infographics,
+`soul_2` for people/UGC, DTC Ads for product shots — see higgsfield-studio skill; check
+memory for brand tokens on brand work). Video → `video-script` + `make-video` /
+higgsfield-studio; run finished videos through `virality_predictor` before posting.
+Music → `suno-music`. Publishing to Meta → the Meta Ads MCP is connected for paid;
+organic posting stays manual.
 
 ## Anti-patterns (never do)
 
