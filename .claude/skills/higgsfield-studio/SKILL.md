@@ -61,6 +61,22 @@ batch is planned.
 4. Re-generate → re-check. Ship when hook + retention are strong. Cap ~3 loops.
    (`action=preview` + job_id re-opens a past dashboard.)
 
+## Video generation rules (quality-critical)
+
+1. **Max length, minimum clips.** Before any `generate_video`: `models_explore
+   action=get` on the chosen model → read its real max `duration` → request it
+   (`duration: <max>`) and script the fewest clips that cover the runtime. Never
+   default to 5s fragments when the model goes longer — fewer seams, continuous motion,
+   coherent native audio. `count: 1` unless the user wants variants.
+2. **Detailed prompts, always.** Every clip prompt uses the 8-layer anatomy from
+   video-script (SHOT / SUBJECT / ACTION-arc / SETTING / LIGHT / STYLE / AUDIO /
+   PACING, 60–120 words). Thin prompts = generic output. The ACTION layer must describe
+   a motion arc across the WHOLE duration — long clips with static action look frozen.
+3. **Consistency across clips**: repeat subject/style descriptors verbatim; chain a
+   `generate_image` job_id as start-frame/keyframe; `seedance_2_0` + identity refs for
+   recurring characters.
+4. `get_cost:true` first on every video job — longer durations cost more; say the number.
+
 ## Production routes
 
 **Social image/carousel art** → `generate_image` (routing table) with `aspect_ratio`

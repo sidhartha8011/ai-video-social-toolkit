@@ -37,16 +37,39 @@ From the ask (infer aggressively, state your picks):
 | Engine | Unit | Clip length | Prompt style | Gotchas |
 |---|---|---|---|---|
 | **Remotion slides** (make-video pipeline; stills via Higgsfield `generate_image`) | still image + Ken Burns | scene = narration length (4–8s) | Rich still-image prompt: subject, setting, mood, lighting, "vertical 9:16, no text" | Scene duration = voiceover duration; needs audioTimestamps; motion comes from Remotion, not the image |
-| **Higgsfield `kling3_0_turbo`** (default clips) | video clip | ~5–10s | Cinematic shot prompt: subject + ACTION verb + camera move (dolly/pan/orbit) + lighting | Fast text-to-video or animate one start-frame; chain a `generate_image` job_id as keyframe for consistency |
-| **Higgsfield `kling3_0` / `seedance_2_0`** | video clip | 5–10s | Same, plus dialogue/audio (kling3_0) or identity refs (seedance) | seedance for recurring characters; audio refs via medias role `audio`; `get_cost` preflight |
+| **Higgsfield `kling3_0_turbo`** (default clips) | video clip | **model max — query `models_explore action=get`, request it** | Full 8-layer prompt anatomy (below) | Fast text-to-video or animate one start-frame; chain a `generate_image` job_id as keyframe for consistency |
+| **Higgsfield `kling3_0` / `seedance_2_0`** | video clip | **model max — query, request it** | 8-layer anatomy + dialogue/audio (kling3_0) or identity refs (seedance) | seedance for recurring characters; audio refs via medias role `audio`; `get_cost` preflight |
 | **Veo-class** (via Higgsfield catalog, `models_explore`) | video clip | 5–8s | One shot per prompt; physical realism, camera grammar ("slow dolly-in, 35mm, golden hour"); native audio on Veo 3.1 | Never script multi-shot sequences in one prompt; verify the model via `models_explore` before promising specs |
 | **Marketing Studio video** (product ads) | preset-driven ad | preset-set | No prose prompt needed — product URL + preset + hooks (UGC/Tutorial/Unboxing) | Script the HOOK LINE + beat order, not shots; pass `aspect_ratio:"9:16"` (defaults 16:9!) |
 | **Stock** (Magnific `stock_search`, if connected) | found clip | any (trim) | Search keywords, not prose | Script the trim: which 3–5s of the found clip |
 
-**Clip-count math (do this explicitly):** scenes = ceil(duration ÷ clip length).
-A 30s reel on a 6s engine = 5 clips. Narration = duration × **~2.3 words/sec** (140 wpm);
-a 30s VO script is ~70 words — cut until it fits. Hero loops: script the LOOP (last frame
-≈ first frame).
+**Clip-length rule — MAXIMIZE, don't fragment:** before scripting, get the chosen
+model's REAL max duration (`models_explore action=get` — never assume). Then:
+**clips = ceil(total ÷ model max)** — the fewest, longest clips the model allows, NOT
+many 5s fragments. One 15s clip beats three 5s clips: no seams, continuous motion,
+coherent native audio. Only cut where the NARRATIVE needs a hard scene change.
+Inside a long single take, choreograph an evolving motion arc (see prompt anatomy) so
+there's still visual change every ~2s for retention.
+Narration = duration × **~2.3 words/sec** (140 wpm); a 30s VO script is ~70 words — cut
+until it fits. Hero loops: script the LOOP (last frame ≈ first frame).
+
+**Video prompt anatomy (use for EVERY clip prompt — 60–120 words, all 8 layers):**
+```
+[SHOT]    camera move + lens + framing: "slow dolly-in, 35mm, low angle, shallow DOF"
+[SUBJECT] specific visual detail: materials, textures, wardrobe — "corrugated steel
+          sheet, galvanized shine, rain beading on the ridges"
+[ACTION]  the motion ARC across the full clip: start state → beats → end state
+          ("rain intensifies; camera pushes past the worker to the roofline; he
+          slaps the sheet — water sprays off, roof holds")
+[SETTING] place, time of day, weather, atmosphere
+[LIGHT]   lighting + grade: "overcast monsoon light, teal-orange commercial grade"
+[STYLE]   finish reference: "shot-on-Arri commercial, crisp product detail"
+[AUDIO]   native-audio direction: ambience, SFX beats, music mood (audio models only)
+[PACING]  where the beat lands: "impact at the midpoint, settle on logo-ready final frame"
+```
+One continuous shot per prompt — never "scene 1… scene 2…" inside a single prompt.
+Repeat subject/style descriptors VERBATIM across clips for consistency (engines have
+no memory).
 
 ## Step 3 — Write the script (output format)
 
