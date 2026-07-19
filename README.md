@@ -1,0 +1,51 @@
+# AI Video + Social Content Toolkit (Claude Code)
+
+A working toolkit for producing short-form videos and algorithm-aware social content with
+[Claude Code](https://claude.com/claude-code), built around a Remotion project, the
+Magnific MCP, and the Suno API.
+
+## What's inside
+
+| Path | What it is |
+|------|-----------|
+| `remotion-video/` | Remotion "Prompt to Video" project (1080×1920). Compositions auto-discovered from `public/content/<slug>/timeline.json`. Includes `cli/build-timeline.ts` to assemble a composition from generated assets. |
+| `.claude/skills/make-video/` | One-shot pipeline: brief → script → images/voice (Magnific) → music (Suno) → assemble → QA → render. |
+| `.claude/skills/suno-music/` | Music generation via sunoapi.org with expert Suno V5 prompt-craft (CC0-adapted from bitwize-music's suno-engineer). `scripts/generate-music.sh` = generate → poll → download. |
+| `.claude/skills/remotion-video-review/` | Key-free video QA: samples frames with `remotion still`, Claude vision critiques them (a TwelveLabs-free review loop). |
+| `.claude/skills/platform-content/` | Algorithm-first content for Instagram / Facebook / websites, with a dated ranking-signal snapshot and a self-refresh rule. |
+| `.claude/skills/social-manager/` | Multi-page social management: per-page knowledge bank (voice, pillars, learnings), calendar, performance feedback loop. Routes creation through platform-content. |
+| `social-pages/_template/` | Knowledge-bank templates: `page.md` (brand profile), `calendar.md`, `performance.md`. |
+
+## Setup
+
+```bash
+cd remotion-video
+npm install
+npm run dev          # Remotion Studio
+```
+
+Secrets (never committed): create `remotion-video/.env`
+
+```
+SUNO_KEY=<your sunoapi.org API key>
+```
+
+Optional engines: Magnific MCP (`claude mcp add --transport http magnific https://mcp.magnific.com`),
+ElevenLabs (word-timestamp TTS), Higgsfield CLI (`npm i -g @higgsfield/cli`).
+
+## Typical flows
+
+- `"make a video about <topic>"` → make-video runs the full pipeline
+- `"generate background music, cinematic"` → suno-music
+- `"review the render"` → remotion-video-review
+- `"create an instagram carousel about <topic>"` → platform-content
+- `"onboard <brand> socials"` / `"plan the week"` → social-manager
+
+## Notes
+
+- This workspace's other directories are unrelated projects; the allowlist `.gitignore`
+  tracks only the toolkit paths listed above.
+- Suno prompting principles adapted from
+  [bitwize-music-studio/claude-ai-music-skills](https://github.com/bitwize-music-studio/claude-ai-music-skills) (CC0-1.0).
+- Remotion is source-available with its own license terms for companies — see
+  [remotion.dev/license](https://www.remotion.dev/license).

@@ -1,0 +1,36 @@
+# ALLOWLIST gitignore — this workspace contains multiple unrelated client projects.
+# Everything is ignored by default; only the video+social toolkit is tracked.
+/*
+
+# --- tracked: repo meta ---
+!/.gitignore
+!/README.md
+
+# --- tracked: custom Claude Code skills (only the toolkit's five) ---
+!/.claude/
+/.claude/*
+!/.claude/skills/
+/.claude/skills/*
+!/.claude/skills/make-video/
+!/.claude/skills/suno-music/
+!/.claude/skills/remotion-video-review/
+!/.claude/skills/platform-content/
+!/.claude/skills/social-manager/
+
+# --- tracked: social knowledge-bank templates (never real client pages) ---
+!/social-pages/
+/social-pages/*
+!/social-pages/_template/
+
+# --- tracked: the Remotion project ---
+!/remotion-video/
+
+# remotion-video internals to keep out even though the folder is tracked
+remotion-video/node_modules/
+remotion-video/dist/
+remotion-video/out/
+remotion-video/.env
+remotion-video/public/review/
+remotion-video/public/review-test/
+remotion-video/public/content/_music-demo/
+.DS_Store
