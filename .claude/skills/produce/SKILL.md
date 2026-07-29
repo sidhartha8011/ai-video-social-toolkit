@@ -29,17 +29,19 @@ description: |
    "budget" keyword → `kling3_0_turbo`+VO — never photo-slides unless the user explicitly asks for the budget
    slide route (Remotion stills + Ken Burns). Use the item's pre-selected hook
    (hook-factory reserve if it needs alternatives).
-2. **Storyboard gate** (mandatory): build the board(s) per video-script's
-   storyboard-template.md — refs resolved from brand assets, `gpt_image_2` sheet,
+2. **Concept gate** (mandatory): `gpt_image_2` 4-up direction board per
+   concept-board-template.md → user picks a frame (= visual foundation + palette).
+3. **Storyboard gate** (mandatory): sheet built FROM that frame per
+   storyboard-template.md (15-block spec, Visual World LOCKS, 6 panels/15s) →
    user approval — never skip to clips.
-3. Generate per higgsfield-studio plumbing: images (`soul_2`/`nano_banana_pro`, 9:16) or
+4. Generate per higgsfield-studio plumbing: images (`soul_2`/`nano_banana_pro`, 9:16) or
    clips at the MODEL'S MAX duration with full 8-layer prompts (`get_cost` preflight;
    fewest-longest-clips rule) — prefer models with NATIVE audio (`kling3_0`/Veo-class,
    pass `generate_audio` when declared); VO (Higgsfield `text2speech_v2`,
    variant elevenlabs, voice via `list_voices`); slide-route beds: native-audio clips
    or user-supplied track;
    assemble → make-video / `build-timeline.ts` when Remotion route.
-4. QA: remotion-video-review (frames) → **virality_predictor** → fix weakest axis →
+5. QA: remotion-video-review (frames) → **virality_predictor** → fix weakest axis →
    re-check (cap 2 loops). Attach the final score to the draft.
 
 **Carousel:** platform-content slide architecture → `nano_banana_pro` slide art (4:5) →

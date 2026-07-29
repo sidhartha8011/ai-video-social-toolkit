@@ -98,19 +98,23 @@ as before" — engines have no memory; repeat character/style descriptors verbat
 consistency); VO lines timed to the scene's seconds; on-screen text ≤6 words per beat;
 no engine-impossible asks (no 30s single clips, no text rendering inside AI video).
 
-## Step 3.5 — STORYBOARD (mandatory — no video generation without it)
+## Step 3.5 — PRE-PRODUCTION GATES (both mandatory, in order)
 
-Before ANY clip generates, turn the shot table into a **storyboard sheet** per
-[storyboard-template.md](storyboard-template.md):
-- 1 board = up to 15s = 5 panels × 3s. 30s → 2 boards (1–5, 6–10). Same style/character
-  locks VERBATIM on every board of the set.
-- Resolve the **reference checklist first** (founder/product/logo images from
-  `social-pages/<brand>/assets/` — generate-and-lock missing ones), attach refs to the
-  board generation.
-- Generate with **`gpt_image_2`** (quality high, 2k, sheet 3:4) → show the user →
-  **approval gate** → only then video. Save board(s) to the draft folder.
-- Each clip prompt then expands its panel(s) via the 8-layer anatomy, reusing the SAME
-  refs (+ the board as image_reference on models that take it).
+**No video generation without an approved storyboard. No storyboard without an approved
+concept.** Both artifacts use `gpt_image_2` (quality high, 2k).
+
+**Gate A — CONCEPT BOARD** ([concept-board-template.md](concept-board-template.md)):
+2×2 board of 4 DIFFERENT motion-design directions (different palette/texture/energy per
+frame), with a MODE modifier (HIGH MOTION / PRODUCT / STORY / GRAPHIC) + brand lean.
+→ user picks ONE frame → that frame is the visual FOUNDATION; pull 3 hex codes from it.
+
+**Gate B — STORYBOARD SHEET** ([storyboard-template.md](storyboard-template.md)):
+built FROM the picked frame (foundation declaration), 15-block structure — grid layout,
+MIN-TEXT rule, REALISM BAN (highMD), master camera doctrine, peak-action + ambient-density
+mandates, text-anchor pattern, Visual World LOCKS (subject/material/style/palette/
+atmosphere), scene variation, chrome strips, per-panel content with timecodes, locks recap.
+15s = 6 panels (2×3, 9:16); 30s = 2 sheets with identical locks.
+→ user approves → only then clips, carrying the LOCKS verbatim + board as image_reference.
 
 ## Step 4 — Handoff
 
