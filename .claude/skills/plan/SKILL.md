@@ -28,6 +28,13 @@ description: |
    pillar-balanced, format-diverse (platform-content's format-by-goal table).
 4. **Hooks** (hook-factory): for each slotted idea, 3 candidate hooks (different
    mechanisms), best one pre-selected.
+4b. **Visual direction** (video items only): note the intended MODE for the concept board
+   — HIGH MOTION / PRODUCT / STORY / GRAPHIC (see video-script's
+   concept-board-template.md) — plus intended duration and engine fit
+   (`seedance_2_0_mini` >10s/identity · `gemini_omni` ≤10s/ref-driven). This is a NOTE,
+   not a generation: the actual concept board + storyboard happen at /produce time,
+   each with its own approval gate. Flag that every video needs those two rounds so the
+   week's timeline accounts for them.
 5. **Write the plan** into `calendar.md` (status: idea) and present the week compactly:
    ```
    Mon · IG Reel · pillar 2 · "<hook>" — why now: <dated trigger> (source)
@@ -35,7 +42,8 @@ description: |
    ...
    Reserve ideas (3): ...
    ```
-   Every line carries its "why now" and target metric (sends/saves/completion).
+   Every line carries its "why now", target metric (sends/saves/completion), and — for
+   videos — the intended MODE + duration.
 6. **One question at the end:** approve as-is / swap items / adjust — then lock
    approved items (status stays `idea` → they move to `drafted` only via /produce).
 
