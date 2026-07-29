@@ -25,6 +25,8 @@ const AdClipSchema = z.object({
   volume: z.number().default(0.3),
   // Bottom-anchored zoom: > 1 crops the top of the clip (hide bad AI signage etc.)
   scale: z.number().default(1),
+  // Skip into the clip (cold-open: cut dead air before the action)
+  trimBeforeMs: z.number().default(0),
 });
 
 const AdAudioSchema = z.object({
@@ -38,6 +40,8 @@ const AdOverlaySchema = z.object({
   sub: z.string().optional(),
   startMs: z.number(),
   endMs: z.number(),
+  // Hook text: render at full opacity from the first frame (no entrance spring)
+  instant: z.boolean().default(false),
 });
 
 const AdCtaSchema = z.object({
@@ -47,6 +51,9 @@ const AdCtaSchema = z.object({
   phone: z.string(),
   location: z.string(),
   logo: z.string(),
+  // Pill styling — defaults are the WhatsApp look; override for e.g. lead-form blue
+  pillColor: z.string().default("#25d366"),
+  pillTextColor: z.string().default("#0b141a"),
 });
 
 export const AdTimelineSchema = z.object({
@@ -76,7 +83,9 @@ const Overlay: React.FC<{ item: z.infer<typeof AdOverlaySchema> }> = ({
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const enter = spring({ frame, fps, config: { damping: 200 }, durationInFrames: 12 });
+  const enter = item.instant
+    ? 1
+    : spring({ frame, fps, config: { damping: 200 }, durationInFrames: 12 });
   return (
     <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center" }}>
       <div
@@ -188,8 +197,8 @@ const CtaCard: React.FC<{ cta: z.infer<typeof AdCtaSchema>; project: string }> =
             fontFamily: bodyFont,
             fontWeight: 800,
             fontSize: 58,
-            color: "#0b141a",
-            backgroundColor: "#25d366",
+            color: cta.pillTextColor,
+            backgroundColor: cta.pillColor,
             borderRadius: 90,
             padding: "26px 64px",
             transform: `scale(${pulse})`,
@@ -231,6 +240,7 @@ export const AdVideo: React.FC<z.infer<typeof adVideoSchema>> = ({
           <Video
             src={asset(project, clip.src)}
             volume={clip.volume}
+            trimBefore={msToFrame(clip.trimBeforeMs)}
             style={{
               width: "100%",
               height: "100%",

@@ -7,6 +7,8 @@ import {
   adTotalMs,
   adVideoSchema,
 } from "./components/AdVideo";
+import { LogoOutro, logoOutroSchema } from "./components/LogoOutro";
+import { StaticPost, staticPostSchema } from "./components/StaticPost";
 import { FPS, INTRO_DURATION } from "./lib/constants";
 import { getTimelinePath, loadTimelineFromFile } from "./lib/utils";
 
@@ -21,6 +23,41 @@ export const RemotionRoot: React.FC = () => {
 
   return (
     <>
+      <Composition
+        id="ashoka-static-s1-45"
+        component={StaticPost}
+        fps={30}
+        width={1080}
+        height={1350}
+        schema={staticPostSchema}
+        defaultProps={{ project: "ashoka-static-s1" }}
+        durationInFrames={1}
+      />
+      <Composition
+        id="ashoka-static-s1-11"
+        component={StaticPost}
+        fps={30}
+        width={1080}
+        height={1080}
+        schema={staticPostSchema}
+        defaultProps={{ project: "ashoka-static-s1" }}
+        durationInFrames={1}
+      />
+      <Composition
+        id="ashoka-final-with-outro"
+        component={LogoOutro}
+        fps={FPS}
+        width={1080}
+        height={1920}
+        schema={logoOutroSchema}
+        defaultProps={{
+          project: "ashoka-final-with-outro",
+          mainDurationInFrames: 450,
+          outroDurationInFrames: 262,
+          logoCorner: "right" as const,
+        }}
+        durationInFrames={712}
+      />
       {ads.map((project) => (
         <Composition
           key={`${project}-ad`}

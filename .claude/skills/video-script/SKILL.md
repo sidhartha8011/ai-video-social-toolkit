@@ -98,6 +98,20 @@ as before" — engines have no memory; repeat character/style descriptors verbat
 consistency); VO lines timed to the scene's seconds; on-screen text ≤6 words per beat;
 no engine-impossible asks (no 30s single clips, no text rendering inside AI video).
 
+## Step 3.5 — STORYBOARD (mandatory — no video generation without it)
+
+Before ANY clip generates, turn the shot table into a **storyboard sheet** per
+[storyboard-template.md](storyboard-template.md):
+- 1 board = up to 15s = 5 panels × 3s. 30s → 2 boards (1–5, 6–10). Same style/character
+  locks VERBATIM on every board of the set.
+- Resolve the **reference checklist first** (founder/product/logo images from
+  `social-pages/<brand>/assets/` — generate-and-lock missing ones), attach refs to the
+  board generation.
+- Generate with **`gpt_image_2`** (quality high, 2k, sheet 3:4) → show the user →
+  **approval gate** → only then video. Save board(s) to the draft folder.
+- Each clip prompt then expands its panel(s) via the 8-layer anatomy, reusing the SAME
+  refs (+ the board as image_reference on models that take it).
+
 ## Step 4 — Handoff
 
 - Remotion route → this script's scenes map 1:1 to `descriptor.json` scenes (make-video).

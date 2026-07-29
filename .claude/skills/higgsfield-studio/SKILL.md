@@ -65,6 +65,10 @@ batch is planned.
 
 ## Video generation rules (quality-critical)
 
+0. **NO BOARD, NO VIDEO.** Every video job starts from an approved storyboard sheet
+   (video-script's storyboard-template.md): `gpt_image_2` board (5 panels/15s; 30s = 2
+   boards), reference images resolved and attached, user approval — THEN clips. The same
+   refs + board feed the video generation for consistency.
 1. **Max length, minimum clips.** Before any `generate_video`: `models_explore
    action=get` on the chosen model → read its real max `duration` → request it
    (`duration: <max>`) and script the fewest clips that cover the runtime. Never
